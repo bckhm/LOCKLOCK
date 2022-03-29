@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const lockButton = document.querySelector('#lockbtn');
     const lockButtonStatus = document.querySelector('#lockbtnstatus');
+
+    let spinners = document.getElementsByClassName("spinner-grow");
+    for (let i = 0; i < spinners.length; i++){
+        spinners[i].addEventListener("click", () => changeSpinner(spinners[i]));
+    }
     lockButton.addEventListener("click", () => changeLockStatus(lockButton, lockButtonStatus));
+
 })
 
 function changeLockStatus(btn1, btn2) {
@@ -19,3 +25,15 @@ function changeLockStatus(btn1, btn2) {
         btn2.innerHTML = "Locked";
     }
 }
+
+function changeSpinner(button) {
+    console.log("Clicked");
+    if (button.className === "spinner-grow text-success") {
+        button.className = "spinner-grow text-warning";
+    }
+    else if (button.className === "spinner-grow text-warning") {
+        button.className = "spinner-grow text-success";
+    }
+
+}
+

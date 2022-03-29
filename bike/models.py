@@ -17,10 +17,11 @@ class Lot(models.Model):
         (Yes, "Occupied"),
         (No, "Not Occupied")
     ]
-    occupied_status = models.CharField(max_length=3, choices=OCCUPIED_CHOICES, default=None)
+    occupied_status = models.CharField(max_length=3, choices=OCCUPIED_CHOICES, default=No)
 
 # Registered Bicycles
 class Bike(models.Model):
     # Maybe add an image model
-    owner = models.OneToOneField(User, on_delete=models.CASCADE, related_name='bike', default=None)
-    current_lot = models.OneToOneField(Lot, on_delete=models.DO_NOTHING, related_name='bike', default=None)
+    bike_model = models.CharField(max_length=30, default="0000")
+    owner = models.OneToOneField(User, on_delete=models.CASCADE, related_name='bike', default=0000)
+    current_lot = models.OneToOneField(Lot, on_delete=models.DO_NOTHING, related_name='bike', default=0000)

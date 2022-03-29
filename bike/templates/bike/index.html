@@ -6,7 +6,7 @@
 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
     <img src="{% static 'bike/joash.jpeg' %}" width="30" height="30" alt="">
-        PENIS PARKING
+        LOCKLOCK
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,6 +30,68 @@
 
 <hr>
 <div class="container">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">Welcome to LOCKLOCK!</h4>
+        <hr>
+      <p><strong>Securing your bike has never been easier!</strong><br>
+      1. Select a lot below<br>
+      2. Place your bike in the lot<br>
+      3. Click on the 'Lock Bike' button below</p>
+      <p>As simple as 1, 2, 3! :D</p>
+
+
+    </div>
+
+    <div id="lots-card">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Long-term Parking</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Check for available parking lots here!</h6>
+            <div id="lots">
+                <p class="lot-number">1: </p>
+                <div id="spinner" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 1</span>
+                </div>
+                <p class="lot-number">2: </p>
+                <div id="spinner" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 2</span>
+                </div>
+                <p class="lot-number">3: </p>
+                <div id="spinner" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 3</span>
+                </div>
+                <p class="lot-number">4: </p>
+                <div id="spinner" class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Lot 4</span>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Short-term Parking</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Check for available parking lots here!</h6>
+            <div id="lots">
+                <p class="lot-number">1: </p>
+                <div id="spinner" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 1</span>
+                </div>
+                <p class="lot-number">2: </p>
+                <div id="spinner" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 2</span>
+                </div>
+                <p class="lot-number">3: </p>
+                <div id="spinner" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 3</span>
+                </div>
+                <p class="lot-number">4: </p>
+                <div id="spinner" class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Lot 4</span>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
@@ -40,15 +102,17 @@
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
+          <strong>Parking: </strong><code>Long-term</code><br>
             <strong>Lock Number: </strong><code>1</code><br>
-            <strong>Time Elapsed: </strong><code>XX:XX:XX</code>
-            <br>Your penis is in Joash's safe hands!
+            <strong>Time Elapsed: </strong><code>00:05:14</code>
+            <br>Your bike is in safe hands!
             <br>
             <button id="lockbtn" type="button" class="btn btn-danger">Unlock Bike</button>
           </div>
         </div>
       </div>
     </div>
+
 </div>
 
 {% endblock %}

@@ -5,3 +5,30 @@
 #lockbtnstatus {
     margin-left: 4px;
 }
+
+.spinner-grow {
+    animation-duration: 2s;
+}
+
+.card {
+    margin: 4px;
+}
+
+#lots {
+    display: flex;
+    flex-direction: row;
+}
+
+.lot-number {
+    margin: 3px;
+    margin-right: 5px;
+}
+
+#lots-card {
+    display: flex;
+    flex-direction: row;
+}
+
+#accordion-example {
+    margin-top: 10px;
+}

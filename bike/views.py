@@ -9,7 +9,8 @@ from .models import User
 
 # Renders index page
 def index(request):
-    if request.user.is_authenticated:
+    user = request.user
+    if user.is_authenticated:
         return render(request, 'bike/index.html')
 
     else:
