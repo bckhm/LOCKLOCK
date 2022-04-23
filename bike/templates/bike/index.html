@@ -3,30 +3,7 @@
 {% block body %}
 <link rel="stylesheet" href="{% static "bike/style.css" %}">
 <script src="{% static 'bike/index.js' %}"></script>
-<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-    <img src="{% static 'bike/joash.jpeg' %}" width="30" height="30" alt="">
-        LOCKLOCK
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Bike Status <span class="sr-only"></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+
 
 <hr>
 <div class="container">
@@ -49,19 +26,19 @@
             <h6 class="card-subtitle mb-2 text-muted">Check for available parking lots here!</h6>
             <div id="lots">
                 <p class="lot-number">1: </p>
-                <div id="spinner" class="spinner-grow text-success" role="status">
+                <div id="1" class="spinner-grow text-success" role="status">
                     <span class="visually-hidden">Lot 1</span>
                 </div>
                 <p class="lot-number">2: </p>
-                <div id="spinner" class="spinner-grow text-success" role="status">
+                <div id="2" class="spinner-grow text-success" role="status">
                     <span class="visually-hidden">Lot 2</span>
                 </div>
                 <p class="lot-number">3: </p>
-                <div id="spinner" class="spinner-grow text-success" role="status">
+                <div id="3" class="spinner-grow text-success" role="status">
                     <span class="visually-hidden">Lot 3</span>
                 </div>
                 <p class="lot-number">4: </p>
-                <div id="spinner" class="spinner-grow text-danger" role="status">
+                <div id="4" class="spinner-grow text-danger" role="status">
                     <span class="visually-hidden">Lot 4</span>
                 </div>
             </div>
@@ -72,21 +49,21 @@
             <h5 class="card-title">Short-term Parking</h5>
             <h6 class="card-subtitle mb-2 text-muted">Check for available parking lots here!</h6>
             <div id="lots">
-                <p class="lot-number">1: </p>
-                <div id="spinner" class="spinner-grow text-success" role="status">
-                    <span class="visually-hidden">Lot 1</span>
+                <p class="lot-number">5: </p>
+                <div id="5" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 5</span>
                 </div>
-                <p class="lot-number">2: </p>
-                <div id="spinner" class="spinner-grow text-success" role="status">
-                    <span class="visually-hidden">Lot 2</span>
+                <p class="lot-number">6: </p>
+                <div id="6" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 6</span>
                 </div>
-                <p class="lot-number">3: </p>
-                <div id="spinner" class="spinner-grow text-success" role="status">
-                    <span class="visually-hidden">Lot 3</span>
+                <p class="lot-number">7: </p>
+                <div id="7" class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Lot 7</span>
                 </div>
-                <p class="lot-number">4: </p>
-                <div id="spinner" class="spinner-grow text-danger" role="status">
-                    <span class="visually-hidden">Lot 4</span>
+                <p class="lot-number">8: </p>
+                <div id="8" class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Lot 8</span>
                 </div>
             </div>
           </div>
@@ -97,17 +74,15 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              BICYCLE STATUS:<span id='lockbtnstatus' class="badge rounded-pill bg-success">Locked</span>
+              <strong>BICYCLE STATUS:</strong><span id='lockbtnstatus' class="badge rounded-pill bg-danger">Unlocked</span>
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-          <strong>Parking: </strong><code>Long-term</code><br>
-            <strong>Lock Number: </strong><code>1</code><br>
-            <strong>Time Elapsed: </strong><code>00:05:14</code>
-            <br>Your bike is in safe hands!
+          <strong>Parking: </strong><code id="LotType"></code><br>
+              <strong>Lock Number: </strong><code id="LockNumber"></code><br>
             <br>
-            <button id="lockbtn" type="button" class="btn btn-danger">Unlock Bike</button>
+            <button id="lockbtn" type="button" class="btn btn-success">Lock Bike</button>
           </div>
         </div>
       </div>

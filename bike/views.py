@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.db import IntegrityError
 from django.http import JsonResponse
-from .models import User
+from .models import User, Lot
 
 
 # Renders index page
@@ -15,6 +15,7 @@ def index(request):
 
     else:
         return HttpResponseRedirect(reverse('login'))
+
 
 # Login verification using user's email and password
 def login_view(request):
@@ -74,3 +75,30 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "bike/register.html")
+
+
+# Returns info on a particular lot to JS
+def check_lot(request, lotno):
+    curr_lot = Lot.objects.get(number=lotno)
+    return JsonResponse({
+        "type": curr_lot.type,
+        "number": curr_lot.number,
+        "occupied": curr_lot.occupied_status})
+
+
+# Changes occupied status in database to "No"
+def unlock_lot(request, lotno):
+    curr_lot = Lot.objects.get(id=lotno)
+    curr_lot.occupied_status = "No"
+    curr_lot.save()
+    return JsonResponse({"Operation": "Unlock",
+                         "Occupied": curr_lot.occupied_status})
+
+
+# Changes occupied status in database to "Yes"
+def lock_lot(request, lotno):
+    curr_lot = Lot.objects.get(id=lotno)
+    curr_lot.occupied_status = "Yes"
+    curr_lot.save()
+    return JsonResponse({"Operation": "Lock",
+                         "Occupied": curr_lot.occupied_status})

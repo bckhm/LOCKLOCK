@@ -10,18 +10,20 @@ class User(AbstractUser):
 
 # Lots available in the shelter
 class Lot(models.Model):
-    number = models.IntegerField(max_length=2)
+    number = models.IntegerField()
     Yes = "Yes"
     No = "No"
     OCCUPIED_CHOICES = [
         (Yes, "Occupied"),
         (No, "Not Occupied")
     ]
+    TYPE_CHOICES = [
+        ("ST", "Short-term"),
+        ("LT", "Long-term"),
+        ("NIL", "")
+    ]
     occupied_status = models.CharField(max_length=3, choices=OCCUPIED_CHOICES, default=No)
+    type = models.CharField(max_length=4, choices=TYPE_CHOICES, default="NIL")
 
-# Registered Bicycles
-class Bike(models.Model):
-    # Maybe add an image model
-    bike_model = models.CharField(max_length=30, default="0000")
-    owner = models.OneToOneField(User, on_delete=models.CASCADE, related_name='bike', default=0000)
-    current_lot = models.OneToOneField(Lot, on_delete=models.DO_NOTHING, related_name='bike', default=0000)
+    def __str__(self):
+        return f"{self.type}: Lot {self.number}"
