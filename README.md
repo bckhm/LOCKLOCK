@@ -1,6 +1,6 @@
 
 # URL Shortener
-![header](header.png)
+![header](header.jpg)
 
 ### Requirements 
     • Python
