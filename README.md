@@ -13,6 +13,7 @@
 3. Start the local server
     • Terminal commands: `python mamage.py runserver`
 
+![tutorial](tutorial.gif)
 ## Tutorial
 1. Create an account
 2. Login
