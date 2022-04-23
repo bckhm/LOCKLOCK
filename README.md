@@ -1,6 +1,6 @@
 
 ![header](header.jpg)
-
+Read more about the project here: http://asd.courses.sutd.edu.sg/dti-teams/locklock/
 ### Requirements 
     • Python
     • django
