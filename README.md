@@ -4,7 +4,7 @@
 
 ### Requirements 
     • Python
-    • random, django
+    • django
 
 ## Running the code
 1. Ensure that random and django libraries are installed
