@@ -4,6 +4,8 @@ Read more about the project here: http://asd.courses.sutd.edu.sg/dti-teams/lockl
 ### Requirements 
     • Python
     • django
+    • libdw
+    
 
 ## Running the code
 1. Ensure that random and django libraries are installed
