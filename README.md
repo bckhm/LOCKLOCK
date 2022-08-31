@@ -23,6 +23,8 @@ Fill in your projectID, apikey, and registered user account under the particular
 
 ## Tutorial
 ![tutorial](tutorial.gif)
+Live Tutorial: https://youtu.be/qU-qFXi8tp8?t=320
+
 1. Create an account
 2. Login
 3. Select an availble lot (green)
